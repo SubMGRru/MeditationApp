@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MeditationApp</string>
+
+    <string name="onboarding_Text_pleaseWait_Title">Добро пожаловать</string>
+    <string name="onboarding_Text_pleaseWait_Subtitle">приложение вот-вот запустится</string>
+
+</resources>
