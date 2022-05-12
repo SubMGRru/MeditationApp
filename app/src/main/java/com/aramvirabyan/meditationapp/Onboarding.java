@@ -31,14 +31,6 @@ public class Onboarding extends AppCompatActivity {
         setContentView(R.layout.activity_onboarding);
         fragmentManager = getSupportFragmentManager();
 
-        String filename = "RelaxingAtHome-amico.svg";
-        try(InputStream inputStream = getApplicationContext().getAssets().open("Images/Graphics/" + filename)){
-            bg_slide1_img = Drawable.createFromStream(inputStream, null);
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-
         final PaperOnboardingFragment onBoardingFragment = PaperOnboardingFragment.newInstance(getDataForOnboarding());
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -48,7 +40,7 @@ public class Onboarding extends AppCompatActivity {
         onBoardingFragment.setOnRightOutListener(new PaperOnboardingOnRightOutListener() {
             @Override
             public void onRightOut() {
-                startActivity(new Intent(Onboarding.this, Onboarding.class));
+                startActivity(new Intent(getApplicationContext(), AuthProposal.class));
             }
         });
     }

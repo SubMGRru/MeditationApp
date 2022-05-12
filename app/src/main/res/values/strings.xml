@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">MeditationApp</string>
+    <string name="api_server">http://192.168.1.38:3000</string>
+    <string name="staticRenderer_server">http://192.168.1.38:8080</string>
 
     <string name="onboarding_Text_pleaseWait_Title">Добро пожаловать</string>
     <string name="onboarding_Text_pleaseWait_Subtitle">приложение вот-вот запустится</string>
 
+    <!-- Onboarding -->
     <string name="onboarding_slide1_title">приложение вот-вот запустится</string>
     <string name="onboarding_slide1_text">приложение вот-вот запустится</string>
 
@@ -13,7 +16,23 @@
     <string name="onboarding_slide3_title">приложение вот-вот запустится</string>
     <string name="onboarding_slide3_text">приложение вот-вот запустится</string>
 
+    <!-- NoConnection -->
+    <string name="noconnection_noconnection_title">Нет подключения</string>
+    <string name="noconnection_noconnection_subtitle">Для работы приложения, необходимо подключене к сети.\nНастройте подключение к Интернету и попробуйте еще раз.</string>
 
+    <string name="noconnection_unavailableserver_title">Сервер недоступен</string>
+    <string name="noconnection_unavailableserver_subtitle">Не удалось установить соединение с сервером. Мы уже знаем о проблеме и скоро ее устраним. Попробуйте чуть позже!</string>
+
+    <string name="noconnection_button_restart">Попробовать еще раз</string>
+
+    <!-- AuthProposal -->
+    <string name="authproposal_title">Сохраните прогресс</string>
+    <string name="authproposal_subtitle">Войдите в учетную запись, чтобы сохранить прогресс и начать соревноваться с друзьями. Вы получите как специальные, так и уникальные возможности и преимущества.</string>
+    <string name="button_GoNext">Продолжить</string>
+    <string name="text_continueWithoutRegistration">Продолжить без входа в систему\n(без сохранения прогресса)</string>
+
+    <!-- AuthService -->
+    <string name="snackbar_connectionAwait">Подключение к серверу...</string>
     <!-- ATTENTION! -->
     <!-- CREATED BY ANDROID STUDIO! -->
     <!-- DO NOT EDIT! -->
@@ -36,5 +55,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_auth_basic">AuthBasic</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
