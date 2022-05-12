@@ -16,7 +16,7 @@ public class PreferencesManagerInterface extends PreferencesManager{
 
     @JavascriptInterface
     public void updateService(String toast) {
-        mContext.startActivity(new Intent(mContext, NoConnection.class));
+        mContext.startActivity(new Intent(mContext, HomeActivity.class));
     }
 
 }

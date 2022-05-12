@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Material3.Dark.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MeditationActivity"
             android:exported="false" />
         <activity

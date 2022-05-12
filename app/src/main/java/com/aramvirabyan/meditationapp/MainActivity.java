@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
                     String value = preferences.getString("usage_state",null);
                     if (value == null) {
                         // the key does not exist
-                        startActivity(new Intent(getApplicationContext(), MeditationActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Onboarding.class));
                     } else {
                         // handle the value
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
