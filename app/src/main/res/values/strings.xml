@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">MeditationApp</string>
-    <string name="api_server">http://192.168.4.237:3000</string>
+    <string name="api_server">http://192.168.1.38:3000</string>
     <string name="staticRenderer_server">https://submgrru.github.io/MeditationsApp-RenderSide</string>
 
     <string name="onboarding_Text_pleaseWait_Title">Добро пожаловать</string>
     <string name="onboarding_Text_pleaseWait_Subtitle">приложение вот-вот запустится</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_slide1_title">приложение вот-вот запустится</string>
-    <string name="onboarding_slide1_text">приложение вот-вот запустится</string>
+    <string name="onboarding_slide1_title">Уникальные медитации</string>
+    <string name="onboarding_slide1_text">Каждый раз мы создаем уникальные медитации, которые подстраиваются под ваши интересы и индивидуальные черты личности.</string>
 
-    <string name="onboarding_slide2_title">приложение вот-вот запустится</string>
-    <string name="onboarding_slide2_text">приложение вот-вот запустится</string>
+    <string name="onboarding_slide2_title">Простое приложение</string>
+    <string name="onboarding_slide2_text">Здесь нет сложных и непонятных разделов, а приступить к медитации можно в один клик. Вам не придется даже разбираться: все и так очень просто!</string>
 
-    <string name="onboarding_slide3_title">приложение вот-вот запустится</string>
-    <string name="onboarding_slide3_text">приложение вот-вот запустится</string>
+    <string name="onboarding_slide3_title">И очень удобно</string>
+    <string name="onboarding_slide3_text">Уникальные медитации в удобном приложении буквально в одном клике от вас. Свайпайте вправо и давайте начнем!</string>
 
     <!-- NoConnection -->
     <string name="noconnection_noconnection_title">Нет подключения</string>
@@ -33,6 +33,19 @@
 
     <!-- AuthService -->
     <string name="snackbar_connectionAwait">Подключение к серверу...</string>
+
+    <!-- Home Page -->
+    <string name="home_slide_1_text">Каждая медитация уникальна и создается исключительно под Вас</string>
+    <string name="home_slide_2_text">Тихое и спокойное место подойдет лучше всего</string>
+
+    <string name="home_text_AboutMeditation">Каждый раз мы создаем уникальные медитации, которые подстраиваются под ваши интересы и индивидуальные черты личности. \n\nНайдите уютное и тихое место для медитации. Убедитесь, что Вы свободны и никуда не спешите. Когда будете готовы — переходите к медитации.</string>
+    <string name="home_button_startmeditation">Перейти к медитации </string>
+
+    <!-- Meditations Player -->
+    <string name="meditations_pausebutton">Пауза</string>
+    <string name="meditations_resumebutton">Продолжить</string>
+
+
     <!-- ATTENTION! -->
     <!-- CREATED BY ANDROID STUDIO! -->
     <!-- DO NOT EDIT! -->

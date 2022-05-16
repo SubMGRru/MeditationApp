@@ -6,14 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="371dp"
-        android:layout_height="186dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="164dp"
-        android:onClick="gonext"
-        android:text="Button"
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/homeactivity_slider"
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="15dp"
+        app:iss_auto_cycle="true"
+        app:iss_corner_radius="58"
+        app:iss_delay="0"
+        app:iss_error_image="@color/cardview_dark_background"
+        app:iss_period="3000"
+        app:iss_placeholder="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/home_startmeditation"
+        android:layout_width="324dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="35dp"
+        android:onClick="gonext"
+        android:text="@string/home_button_startmeditation"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/home_imageView"
+        android:layout_width="214dp"
+        android:layout_height="229dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_text_AboutMeditation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/home_text_AboutMeditation"
+        android:layout_width="320dp"
+        android:layout_height="141dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/home_text_AboutMeditation"
+        app:layout_constraintBottom_toTopOf="@+id/home_startmeditation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

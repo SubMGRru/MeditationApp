@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
                         // handle the value
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     }
+                    finish();
                 }
             }, timeToAwait);
         }
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
 
         } else {
             startActivity(new Intent(getApplicationContext(), NoConnection.class).putExtra("reasonState", "no_connection"));
+            finish();
             return true;
         }
     }

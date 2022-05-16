@@ -1,5 +1,7 @@
 package com.aramvirabyan.meditationapp;
 
+import static com.aramvirabyan.meditationapp.AuthService.save_AuthData;
+
 import android.content.Context;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
@@ -13,13 +15,7 @@ public class AuthExternalInterface extends AuthExternal{
     }
 
     @JavascriptInterface
-    public void showToast(String toast){
-        Toast.makeText(mContext, toast, Toast.LENGTH_LONG).show();
-        //mContext.startActivity(new Intent(mContext, HomeScreen.class));
-    }
-
-    @JavascriptInterface
-    public void init__SettingsCenter(){
-        //mContext.startActivity(new Intent(mContext, SettingsCenter.class));
+    public void completeAuth(String token){
+        save_AuthData(mContext, token);
     }
 }

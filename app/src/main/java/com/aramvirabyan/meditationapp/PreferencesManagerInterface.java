@@ -1,5 +1,6 @@
 package com.aramvirabyan.meditationapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
@@ -17,6 +18,7 @@ public class PreferencesManagerInterface extends PreferencesManager{
     @JavascriptInterface
     public void updateService(String toast) {
         mContext.startActivity(new Intent(mContext, HomeActivity.class));
+        ((Activity)mContext).finish();
     }
 
 }

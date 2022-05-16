@@ -37,7 +37,7 @@ public class NoConnection extends AppCompatActivity {
                 text_subtitle = getResources().getString(R.string.noconnection_unavailableserver_subtitle);
             }
         }else{
-            text_title = "dick";
+            text_title = "An Error";
         }
         noconnection_image = findViewById(R.id.noconnection_image);
         try(InputStream inputStream = getApplicationContext().getAssets().open(filename)){
