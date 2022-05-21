@@ -25,18 +25,16 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageView home_imageView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         home_imageView = findViewById(R.id.home_imageView);
         String filename = "Images/Graphics/business-3d-woman-n-music.webp";
-        try(InputStream inputStream = getApplicationContext().getAssets().open(filename)){
+        try(InputStream inputStream = getApplicationContext().getAssets().open(filename)) {
             Drawable drawable = Drawable.createFromStream(inputStream, null);
             home_imageView.setImageDrawable(drawable);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -49,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
 
-    public void gonext(View view){
+    public void gonext(View view) {
         startActivity(new Intent(getApplicationContext(), MeditationActivity.class));
     }
 

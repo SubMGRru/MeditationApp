@@ -25,8 +25,7 @@ public class Onboarding extends AppCompatActivity {
 
     private Drawable bg_slide1_img;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
         fragmentManager = getSupportFragmentManager();
@@ -38,8 +37,7 @@ public class Onboarding extends AppCompatActivity {
         fragmentTransaction.commit();
 
         onBoardingFragment.setOnRightOutListener(new PaperOnboardingOnRightOutListener() {
-            @Override
-            public void onRightOut() {
+            @Override public void onRightOut() {
                 startActivity(new Intent(getApplicationContext(), AuthProposal.class));
             }
         });
@@ -47,12 +45,9 @@ public class Onboarding extends AppCompatActivity {
 
     private ArrayList<PaperOnboardingPage> getDataForOnboarding() {
         // prepare data
-        PaperOnboardingPage scr1 = new PaperOnboardingPage(getString(R.string.onboarding_slide1_title), getString(R.string.onboarding_slide1_text),
-                Color.parseColor("#d0bcff"), R.drawable.relaxing_at_home_amico, R.drawable.icons8_moon_and_stars_96);
-        PaperOnboardingPage scr2 = new PaperOnboardingPage(getString(R.string.onboarding_slide2_title), getString(R.string.onboarding_slide2_text),
-                Color.parseColor("#efb8c8"), R.drawable.reading_girl_and_cats, R.drawable.icons8_cat_96);
-        PaperOnboardingPage scr3 = new PaperOnboardingPage(getString(R.string.onboarding_slide3_title), getString(R.string.onboarding_slide3_text),
-                Color.parseColor("#ffd8e4"), R.drawable.casual_life_3d_woman_taking_a_funny_photo_with_dog, R.drawable.freepic_icon_rocket);
+        PaperOnboardingPage scr1 = new PaperOnboardingPage(getString(R.string.onboarding_slide1_title), getString(R.string.onboarding_slide1_text), Color.parseColor("#d0bcff"), R.drawable.relaxing_at_home_amico, R.drawable.icons8_moon_and_stars_96);
+        PaperOnboardingPage scr2 = new PaperOnboardingPage(getString(R.string.onboarding_slide2_title), getString(R.string.onboarding_slide2_text), Color.parseColor("#efb8c8"), R.drawable.reading_girl_and_cats, R.drawable.icons8_cat_96);
+        PaperOnboardingPage scr3 = new PaperOnboardingPage(getString(R.string.onboarding_slide3_title), getString(R.string.onboarding_slide3_text), Color.parseColor("#ffd8e4"), R.drawable.casual_life_3d_woman_taking_a_funny_photo_with_dog, R.drawable.freepic_icon_rocket);
 
         ArrayList<PaperOnboardingPage> elements = new ArrayList<>();
         elements.add(scr1);

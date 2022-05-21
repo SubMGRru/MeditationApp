@@ -11,12 +11,11 @@ public class ConnectionReceiver extends BroadcastReceiver {
     // initialize listener
     public static ReceiverListener Listener;
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
+    @Override public void onReceive(Context context, Intent intent) {
 
         // initialize connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager)
-                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         // Initialize network info
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();

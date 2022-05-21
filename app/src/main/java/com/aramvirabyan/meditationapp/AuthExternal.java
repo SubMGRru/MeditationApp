@@ -11,8 +11,7 @@ public class AuthExternal extends AppCompatActivity {
 
     public Context context;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth_external);
 
