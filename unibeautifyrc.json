@@ -1,0 +1,9 @@
+{
+  "Java": {
+    "beautifiers": [
+      "Pretty Diff"
+    ],
+    "indent_size": 4,
+    "max_preserve_newlines": 1
+  }
+}
