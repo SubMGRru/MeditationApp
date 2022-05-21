@@ -7,15 +7,14 @@ import android.content.Intent;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
-public class AuthExternalInterface extends AuthExternal{
+public class AuthExternalInterface extends AuthExternal {
     Context mContext;
 
-    AuthExternalInterface(Context c){
+    AuthExternalInterface(Context c) {
         mContext = c;
     }
 
-    @JavascriptInterface
-    public void completeAuth(String token){
+    @JavascriptInterface public void completeAuth(String token) {
         save_AuthData(mContext, token);
     }
 }

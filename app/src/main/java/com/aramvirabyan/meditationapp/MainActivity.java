@@ -28,19 +28,17 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
     ImageView mainactivity_image;
     long timeToAwait = 0;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         long start = System.currentTimeMillis();
 
         mainactivity_image = findViewById(R.id.mainactivity_image);
         String filename = "Images/Graphics/GirlAndMeditation.webp";
-        try(InputStream inputStream = getApplicationContext().getAssets().open(filename)){
+        try(InputStream inputStream = getApplicationContext().getAssets().open(filename)) {
             Drawable drawable = Drawable.createFromStream(inputStream, null);
             mainactivity_image.setImageDrawable(drawable);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -53,16 +51,15 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
         long finish = System.currentTimeMillis();
         long timeSpent = finish - start;
 
-        if(timeSpent < 2000){
+        if (timeSpent < 2000) {
             timeToAwait = 2000 - timeSpent;
         }
 
-        if(!isThereAnyProblemWithNetwork){
+        if (!isThereAnyProblemWithNetwork) {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    String value = preferences.getString("usage_state",null);
+                @Override public void run() {
+                    String value = preferences.getString("usage_state", null);
                     if (value == null) {
                         // the key does not exist
                         startActivity(new Intent(getApplicationContext(), Onboarding.class));
@@ -91,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
         ConnectionReceiver.Listener = this;
 
         // Initialize connectivity manager
-        ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager manager = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         // Initialize network info
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
@@ -121,21 +118,18 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
         }
     }
 
-    @Override
-    public void onNetworkChange(boolean isConnected) {
+    @Override public void onNetworkChange(boolean isConnected) {
         // display snack bar
         problemHandler(isConnected);
     }
 
-    @Override
-    protected void onResume() {
+    @Override protected void onResume() {
         super.onResume();
         // call method
         checkConnection();
     }
 
-    @Override
-    protected void onPause() {
+    @Override protected void onPause() {
         super.onPause();
         // call method
         checkConnection();

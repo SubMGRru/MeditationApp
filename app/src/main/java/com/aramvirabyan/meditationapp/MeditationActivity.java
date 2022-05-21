@@ -25,8 +25,7 @@ public class MeditationActivity extends AppCompatActivity {
     boolean mediaPlayer_isPaused = false;
     int mediaPlayer_lengthBeforePause = 0;
     Button mediaPlayer_stateToggleButton;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meditation);
 
@@ -42,12 +41,7 @@ public class MeditationActivity extends AppCompatActivity {
 
         String url = "https://test.deqstudio.com/medit/get_audio.php"; // your URL here
         mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioAttributes(
-                new AudioAttributes.Builder()
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .setUsage(AudioAttributes.USAGE_MEDIA)
-                        .build()
-        );
+        mediaPlayer.setAudioAttributes(new AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).setUsage(AudioAttributes.USAGE_MEDIA).build());
         try {
             mediaPlayer.setDataSource(url);
         } catch (IOException e) {
@@ -61,8 +55,7 @@ public class MeditationActivity extends AppCompatActivity {
         mediaPlayer.start();
     }
 
-    @Override
-    public void onDestroy() {
+    @Override public void onDestroy() {
         super.onDestroy();
         mediaPlayer.stop();
         mediaPlayer.release();
@@ -70,15 +63,15 @@ public class MeditationActivity extends AppCompatActivity {
     }
 
     public void media_stateToggle(View view) {
-        if(mediaPlayer_isPaused == false){
+        if (mediaPlayer_isPaused == false) {
             mediaPlayer_isPaused = true;
             mediaPlayer.pause();
             mediaPlayer_lengthBeforePause = mediaPlayer.getCurrentPosition();
             mediaPlayer_stateToggleButton.setText(R.string.meditations_resumebutton);
-        }else{
+        } else {
             mediaPlayer_isPaused = false;
             mediaPlayer.start();
-            mediaPlayer.seekTo((int) (mediaPlayer_lengthBeforePause - 0.3 * 1000));
+            mediaPlayer.seekTo((int)(mediaPlayer_lengthBeforePause - 0.3 * 1000));
             mediaPlayer_stateToggleButton.setText(R.string.meditations_pausebutton);
         }
     }

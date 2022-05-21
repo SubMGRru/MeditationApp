@@ -12,8 +12,7 @@ import android.webkit.WebViewClient;
 public class PreferencesManager extends AppCompatActivity {
 
     public Context context;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences_manager);
 

@@ -12,16 +12,12 @@ import com.aramvirabyan.meditationapp.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
-private FragmentFirstBinding binding;
+    private FragmentFirstBinding binding;
 
-    @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+    @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-      binding = FragmentFirstBinding.inflate(inflater, container, false);
-      return binding.getRoot();
+        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
     }
 
@@ -31,14 +27,12 @@ private FragmentFirstBinding binding;
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
     }
 
-@Override
-    public void onDestroyView() {
+    @Override public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
