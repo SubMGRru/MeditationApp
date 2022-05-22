@@ -9,18 +9,19 @@ import android.webkit.WebView;
 
 public class AuthExternal extends AppCompatActivity {
 
-    public Context context;
+  public Context context;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_auth_external);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_auth_external);
 
-        context = getApplicationContext();
+    context = getApplicationContext();
 
-        WebView webView = findViewById(R.id.authexternal_wvbox);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(new AuthExternalInterface(this), "Android");
-        webView.loadUrl(context.getString(R.string.staticRenderer_server) + "/auth/");
-    }
+    WebView webView = findViewById(R.id.authexternal_wvbox);
+    WebSettings webSettings = webView.getSettings();
+    webSettings.setJavaScriptEnabled(true);
+    webView.addJavascriptInterface(new AuthExternalInterface(this), "Android");
+    webView.loadUrl(context.getString(R.string.staticRenderer_server) + "/auth/");
+  }
 }

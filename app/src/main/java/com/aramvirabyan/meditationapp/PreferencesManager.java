@@ -11,21 +11,23 @@ import android.webkit.WebViewClient;
 
 public class PreferencesManager extends AppCompatActivity {
 
-    public Context context;
-    @Override protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preferences_manager);
+  public Context context;
 
-        context = getApplicationContext();
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_preferences_manager);
 
-        WebView webView = findViewById(R.id.preferencesmanager_wv);
-        WebSettings webSettings = webView.getSettings();
-        webView.setWebChromeClient(new WebChromeClient());
-        webSettings.setAppCacheEnabled(false);
-        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        webSettings.setJavaScriptEnabled(true);
-        webView.clearCache(true);
-        webView.addJavascriptInterface(new PreferencesManagerInterface(this), "PreferencesManager");
-        webView.loadUrl(context.getString(R.string.staticRenderer_server) + "/survey/");
-    }
+    context = getApplicationContext();
+
+    WebView webView = findViewById(R.id.preferencesmanager_wv);
+    WebSettings webSettings = webView.getSettings();
+    webView.setWebChromeClient(new WebChromeClient());
+    webSettings.setAppCacheEnabled(false);
+    webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+    webSettings.setJavaScriptEnabled(true);
+    webView.clearCache(true);
+    webView.addJavascriptInterface(new PreferencesManagerInterface(this), "PreferencesManager");
+    webView.loadUrl(context.getString(R.string.staticRenderer_server) + "/survey/");
+  }
 }

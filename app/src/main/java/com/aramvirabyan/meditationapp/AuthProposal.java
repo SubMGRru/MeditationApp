@@ -20,11 +20,11 @@ import java.io.InputStream;
 
 public class AuthProposal extends AppCompatActivity {
 
-    ImageView authproposal_image;
-    TextView authproposal_title;
-    TextView authproposal_subtitle;
+  ImageView authproposal_image;
+  TextView authproposal_title;
+  TextView authproposal_subtitle;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
+  @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth_proposal);
 
@@ -74,10 +74,11 @@ public class AuthProposal extends AppCompatActivity {
         authproposal_subtitle.setVisibility(View.VISIBLE);
     }
 
-    public void call_mainAuth(android.view.View viewBox) {
-        AuthService.mainAuth(this);
-    }
-    public void call_anonAuth(android.view.View viewBox) {
-        AuthService.anonymousAuth(this, viewBox);
-    }
+  public void call_mainAuth(android.view.View viewBox) {
+    AuthService.mainAuth(this);
+  }
+
+  public void call_anonAuth(android.view.View viewBox) {
+    AuthService.anonymousAuth(this, viewBox);
+  }
 }

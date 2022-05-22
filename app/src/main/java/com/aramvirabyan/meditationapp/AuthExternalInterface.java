@@ -8,13 +8,14 @@ import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
 public class AuthExternalInterface extends AuthExternal {
-    Context mContext;
+  Context mContext;
 
-    AuthExternalInterface(Context c) {
-        mContext = c;
-    }
+  AuthExternalInterface(Context c) {
+    mContext = c;
+  }
 
-    @JavascriptInterface public void completeAuth(String token) {
-        save_AuthData(mContext, token);
-    }
+  @JavascriptInterface
+  public void completeAuth(String token) {
+    save_AuthData(mContext, token);
+  }
 }
