@@ -54,10 +54,10 @@ public class AuthService {
             @Override
             public void onErrorResponse(VolleyError error) {
                 snackbar.dismiss();
-                if (error instanceof TimeoutError || error instanceof ServerError || error instanceof ParseError) {
+                if (error instanceof TimeoutError || error instanceof ServerError || error instanceof ParseError || error instanceof NetworkError) {
                     context.startActivity(new Intent(context, NoConnection.class).putExtra("reasonState", "unavailable_server"));
                     ((Activity)context).finish();
-                } else if (error instanceof NetworkError || error instanceof NoConnectionError) {
+                } else if (error instanceof NoConnectionError) {
                     context.startActivity(new Intent(context, NoConnection.class).putExtra("reasonState", "no_connection"));
                     ((Activity)context).finish();
                 } else {

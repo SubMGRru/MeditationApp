@@ -46,8 +46,8 @@ public class AuthProposal extends AppCompatActivity {
         moveUp.play(moveUpY);
         moveUp.start();
 
-        ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(authproposal_image, "scaleX", 2.0 f);
-        ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(authproposal_image, "scaleY", 2.0 f);
+        ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(authproposal_image, "scaleX", 2.0f);
+        ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(authproposal_image, "scaleY", 2.0f);
         scaleDownX.setDuration(1000);
         scaleDownY.setDuration(1000);
 
