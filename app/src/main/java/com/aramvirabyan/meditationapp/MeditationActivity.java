@@ -20,59 +20,67 @@ import java.io.IOException;
 
 public class MeditationActivity extends AppCompatActivity {
 
-    Context context;
-    MediaPlayer mediaPlayer;
-    boolean mediaPlayer_isPaused = false;
-    int mediaPlayer_lengthBeforePause = 0;
-    Button mediaPlayer_stateToggleButton;
-    @Override protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meditation);
+  Context context;
+  MediaPlayer mediaPlayer;
+  boolean mediaPlayer_isPaused = false;
+  int mediaPlayer_lengthBeforePause = 0;
+  Button mediaPlayer_stateToggleButton;
 
-        context = getApplicationContext();
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_meditation);
 
-        mediaPlayer_stateToggleButton = findViewById(R.id.meditations_mediastatetoggle);
+    context = getApplicationContext();
 
-        WebView webView = findViewById(R.id.meditationactivity_wvbox);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(new AuthExternalInterface(this), "Android");
-        webView.loadUrl("https://test.deqstudio.com/medit/get_background.php?session_id=DEMO1&token=12345678");
+    mediaPlayer_stateToggleButton = findViewById(R.id.meditations_mediastatetoggle);
 
-        String url = "https://test.deqstudio.com/medit/get_audio.php?session_id=DEMO1&token=12345678"; // your URL here
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioAttributes(new AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).setUsage(AudioAttributes.USAGE_MEDIA).build());
-        try {
-            mediaPlayer.setDataSource(url);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            mediaPlayer.prepare(); // might take long! (for buffering, etc)
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mediaPlayer.start();
+    WebView webView = findViewById(R.id.meditationactivity_wvbox);
+    WebSettings webSettings = webView.getSettings();
+    webSettings.setJavaScriptEnabled(true);
+    webView.addJavascriptInterface(new AuthExternalInterface(this), "Android");
+    webView.loadUrl(
+        "https://test.deqstudio.com/medit/get_background.php?session_id=DEMO1&token=12345678");
+
+    String url = "https://test.deqstudio.com/medit/get_audio.php?session_id=DEMO1&token=12345678"; // your
+                                                                                                   // URL
+                                                                                                   // here
+    mediaPlayer = new MediaPlayer();
+    mediaPlayer.setAudioAttributes(
+        new AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+            .setUsage(AudioAttributes.USAGE_MEDIA).build());
+    try {
+      mediaPlayer.setDataSource(url);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-
-    @Override public void onDestroy() {
-        super.onDestroy();
-        mediaPlayer.stop();
-        mediaPlayer.release();
-        finish();
+    try {
+      mediaPlayer.prepare(); // might take long! (for buffering, etc)
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+    mediaPlayer.start();
+  }
 
-    public void media_stateToggle(View view) {
-        if (mediaPlayer_isPaused == false) {
-            mediaPlayer_isPaused = true;
-            mediaPlayer.pause();
-            mediaPlayer_lengthBeforePause = mediaPlayer.getCurrentPosition();
-            mediaPlayer_stateToggleButton.setText(R.string.meditations_resumebutton);
-        } else {
-            mediaPlayer_isPaused = false;
-            mediaPlayer.start();
-            mediaPlayer.seekTo((int)(mediaPlayer_lengthBeforePause - 0.3 * 1000));
-            mediaPlayer_stateToggleButton.setText(R.string.meditations_pausebutton);
-        }
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    mediaPlayer.stop();
+    mediaPlayer.release();
+    finish();
+  }
+
+  public void media_stateToggle(View view) {
+    if (mediaPlayer_isPaused == false) {
+      mediaPlayer_isPaused = true;
+      mediaPlayer.pause();
+      mediaPlayer_lengthBeforePause = mediaPlayer.getCurrentPosition();
+      mediaPlayer_stateToggleButton.setText(R.string.meditations_resumebutton);
+    } else {
+      mediaPlayer_isPaused = false;
+      mediaPlayer.start();
+      mediaPlayer.seekTo((int) (mediaPlayer_lengthBeforePause - 0.3 * 1000));
+      mediaPlayer_stateToggleButton.setText(R.string.meditations_pausebutton);
     }
+  }
 }
