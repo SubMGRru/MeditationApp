@@ -37,9 +37,9 @@ public class MeditationActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new AuthExternalInterface(this), "Android");
-        webView.loadUrl("https://test.deqstudio.com/medit/bg/bg1/");
+        webView.loadUrl("https://test.deqstudio.com/medit/get_background.php?session_id=DEMO1&token=12345678");
 
-        String url = "https://test.deqstudio.com/medit/get_audio.php"; // your URL here
+        String url = "https://test.deqstudio.com/medit/get_audio.php?session_id=DEMO1&token=12345678"; // your URL here
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioAttributes(new AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).setUsage(AudioAttributes.USAGE_MEDIA).build());
         try {
