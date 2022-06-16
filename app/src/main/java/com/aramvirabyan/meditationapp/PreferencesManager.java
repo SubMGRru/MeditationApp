@@ -20,12 +20,12 @@ public class PreferencesManager extends AppCompatActivity {
 
         WebView webView = findViewById(R.id.preferencesmanager_wv);
         WebSettings webSettings = webView.getSettings();
-        webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebViewClient(new WebViewClient());
         webSettings.setAppCacheEnabled(false);
         webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         webSettings.setJavaScriptEnabled(true);
         webView.clearCache(true);
         webView.addJavascriptInterface(new PreferencesManagerInterface(this), "PreferencesManager");
-        webView.loadUrl(context.getString(R.string.staticRenderer_server) + "/survey/");
+        webView.loadUrl(context.getString(R.string.staticRenderer_server) + "/survey/public/?source=androidapp");
     }
 }

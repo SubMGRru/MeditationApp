@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MeditationApp</string>
     <string name="api_server">http://192.168.1.38:3000</string>
-    <string name="staticRenderer_server">https://submgrru.github.io/MeditationsApp-RenderSide</string>
+    <string name="staticRenderer_server">http://192.168.1.38:5500/</string>
 
     <string name="onboarding_Text_pleaseWait_Title">Добро пожаловать</string>
     <string name="onboarding_Text_pleaseWait_Subtitle">приложение вот-вот запустится</string>
